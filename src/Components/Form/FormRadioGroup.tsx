@@ -1,8 +1,6 @@
-import { Fragment } from 'react/jsx-runtime';
-
-import { memo, useEffect, useState } from 'react';
+import { Fragment, memo } from 'react';
 import { RADIO_GROUPS } from './Form.consts';
-import { useFormData, useSetFormData } from '../../stores/consultationStore';
+import styles from './FormRadioGroup.module.scss';
 
 interface FormRadioGroupProps {
   question: string;
@@ -18,18 +16,20 @@ const FormRadioGroup = memo(
   ({ question, values, radioGroup, handleOnChange }: FormRadioGroupProps) => (
     <div>
       <h2>{question}</h2>
-      {values.map((value) => (
-        <Fragment key={value}>
-          <label htmlFor={`${radioGroup}-${value}`}>{value}</label>
-          <input
-            type="radio"
-            id={`${radioGroup}-${value}`}
-            value={value}
-            name={radioGroup}
-            onChange={(event) => handleOnChange(event, radioGroup)}
-          />
-        </Fragment>
-      ))}
+      <div className={styles.formGroupContainer}>
+        {values.map((value) => (
+          <div key={value} className={styles.formGroup}>
+            <label htmlFor={`${radioGroup}-${value}`}>{value}</label>
+            <input
+              type="radio"
+              id={`${radioGroup}-${value}`}
+              value={value}
+              name={radioGroup}
+              onChange={(event) => handleOnChange(event, radioGroup)}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 );

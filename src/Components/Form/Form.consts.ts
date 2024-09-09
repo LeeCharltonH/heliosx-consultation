@@ -16,31 +16,31 @@ export interface ConsultationStep {
 export const CONSULTATION_STEPS_CONFIG: ConsultationStep[] = [
   {
     step: 1,
-    question: 'Question 1',
+    question: 'Have your symptoms lasted longer than 1 week?',
     radioGroup: RADIO_GROUPS.Q1,
     values: ['Yes', 'No']
   },
   {
     step: 2,
-    question: 'Question 2',
+    question: 'Do you have a rash?',
     radioGroup: RADIO_GROUPS.Q2,
     values: ['Yes', 'No']
   },
   {
     step: 3,
-    question: 'Question 3',
+    question: 'Have you experienced any headaches?',
     radioGroup: RADIO_GROUPS.Q3,
     values: ['Yes', 'No']
   },
   {
     step: 4,
-    question: 'Question 4',
+    question: 'Have you experienced any nausea?',
     radioGroup: RADIO_GROUPS.Q4,
     values: ['Yes', 'No']
   },
   {
     step: 5,
-    question: 'Question 5',
+    question: 'Have you been feeling faint?',
     radioGroup: RADIO_GROUPS.Q5,
     values: ['Yes', 'No']
   }

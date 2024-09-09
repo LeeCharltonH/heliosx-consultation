@@ -1,0 +1,12 @@
+.header {
+  padding: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  img {
+    max-height: 100px;
+    width: auto;
+  }
+}

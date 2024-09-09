@@ -9,8 +9,9 @@ import {
   useSetIsFormComplete
 } from '../../stores/consultationStore';
 import { Button } from '../Button/Button';
+import styles from './Form.module.scss';
 
-export const Form = () => {
+const Form = () => {
   const [hasSelected, setHasSelected] = useState<boolean>(false);
   const formData = useFormData();
   const currentStep = useCurrentStep();
@@ -36,9 +37,19 @@ export const Form = () => {
 
   return (
     <form
+      className={styles.form}
       onSubmit={(event) => {
         event.preventDefault();
-        console.log({ formData });
+
+        const mappedQuestions = () =>
+          CONSULTATION_STEPS_CONFIG.map((step) => {
+            const answer = formData[step.radioGroup];
+
+            return { question: step.question, answer };
+          });
+        console.log({ formData: mappedQuestions() });
+
+        setIsFormComplete();
       }}>
       <FormRadioGroup
         key={consultationStep.radioGroup}
@@ -57,9 +68,9 @@ export const Form = () => {
           }}
         />
       )}
-      {isLastStep && (
-        <Button disabled={!hasSelected} type="submit" value="Submit" onClick={setIsFormComplete} />
-      )}
+      {isLastStep && <Button disabled={!hasSelected} type="submit" value="Submit" />}
     </form>
   );
 };
+
+export default Form;

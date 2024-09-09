@@ -1,0 +1,23 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    color: gray;
+    text-decoration: none;
+    font-weight: 700;
+
+    &:hover {
+      color: white;
+    }
+  }
+  
+  @media (max-width:480px) {
+    flex-direction: column;
+  }
+}
