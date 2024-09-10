@@ -10,6 +10,7 @@ import {
 } from '../../stores/consultationStore';
 import { Button } from '../Button/Button';
 import styles from './Form.module.scss';
+import { sendFormData } from './Form.helpers';
 
 const Form = () => {
   const [hasSelected, setHasSelected] = useState<boolean>(false);
@@ -41,13 +42,7 @@ const Form = () => {
       onSubmit={(event) => {
         event.preventDefault();
 
-        const mappedQuestions = () =>
-          CONSULTATION_STEPS_CONFIG.map((step) => {
-            const answer = formData[step.radioGroup];
-
-            return { question: step.question, answer };
-          });
-        console.log({ formData: mappedQuestions() });
+        sendFormData({ config: CONSULTATION_STEPS_CONFIG, formData });
 
         setIsFormComplete();
       }}>

@@ -22,7 +22,7 @@ export const CONSULTATION_STEPS_CONFIG: ConsultationStep[] = [
   },
   {
     step: 2,
-    question: 'Do you have a rash?',
+    question: 'Have you had a fever?',
     radioGroup: RADIO_GROUPS.Q2,
     values: ['Yes', 'No']
   },

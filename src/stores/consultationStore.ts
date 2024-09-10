@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-// import { CONSULTATION_STEPS_CONFIG } from '../Components/Form/Form.consts';
 
 interface ConsultationStore {
   isFormComplete: boolean;

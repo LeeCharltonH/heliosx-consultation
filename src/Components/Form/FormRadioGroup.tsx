@@ -1,4 +1,4 @@
-import { Fragment, memo } from 'react';
+import { memo } from 'react';
 import { RADIO_GROUPS } from './Form.consts';
 import styles from './FormRadioGroup.module.scss';
 
@@ -15,11 +15,11 @@ interface FormRadioGroupProps {
 const FormRadioGroup = memo(
   ({ question, values, radioGroup, handleOnChange }: FormRadioGroupProps) => (
     <div>
-      <h2>{question}</h2>
+      <h2 className={styles.formGroupHeading}>{question}</h2>
       <div className={styles.formGroupContainer}>
         {values.map((value) => (
-          <div key={value} className={styles.formGroup}>
-            <label htmlFor={`${radioGroup}-${value}`}>{value}</label>
+          <label key={value} className={styles.formGroup} htmlFor={`${radioGroup}-${value}`}>
+            {value}
             <input
               type="radio"
               id={`${radioGroup}-${value}`}
@@ -27,7 +27,7 @@ const FormRadioGroup = memo(
               name={radioGroup}
               onChange={(event) => handleOnChange(event, radioGroup)}
             />
-          </div>
+          </label>
         ))}
       </div>
     </div>

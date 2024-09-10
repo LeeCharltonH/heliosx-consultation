@@ -1,8 +1,8 @@
 .button {
   padding: 15px 10px;
   border: none;
-  background-color: darkgray;
-  color: darkslategray;
+  background-color: darkslategray;
+  color: white;
   font-size: large;
   font-weight: 700;
   border-radius: 20px;
@@ -12,9 +12,12 @@
   }
 
   &:active {
-    // background-color: lightgray;
     scale: 90%;
     transition: 0.8s;
+  }
+
+  &:disabled {
+    background-color: lightgray;
   }
 
   @media (max-width:480px) {

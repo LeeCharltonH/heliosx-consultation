@@ -4,12 +4,28 @@
   font-size: x-large;
   gap: 30px;
 
-  h2 {
-    // opacity: 1;
+
+
+  .formGroup {
+    border: black solid 2px;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:has(input[type="radio"]:checked) {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.formGroupHeading {
+    opacity: 1;
     animation-name: fadeInOpacity;
     // animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 0.4s;
     
     @keyframes fadeInOpacity {
 	    0% {
@@ -19,13 +35,5 @@
 		    opacity: 1;
 	    }
     }
-  }
-
-  .formGroup {
-    background-color: black;
-    color: white;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+  
 }

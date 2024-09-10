@@ -1,6 +1,5 @@
 import { Suspense, useState } from 'react';
 import './App.scss';
-// import { Form } from './Components/Form/Form';
 import { Footer } from './Components/Layout/Footer';
 import { Header } from './Components/Layout/Header';
 
@@ -20,8 +19,8 @@ const App = () => {
       <main>
         {!hasStartedConsultation && (
           <div>
-            <h1>Begin Consulatatoin</h1>
-            <Button value={'Click to start'} onClick={() => setHasStartedConsultation(true)} />
+            <h1>Please answer a few questions</h1>
+            <Button value={'Start Consultation'} onClick={() => setHasStartedConsultation(true)} />
           </div>
         )}
         {!isFormComplete && hasStartedConsultation && (
